@@ -14,5 +14,4 @@ while True:
     else:
         print(name[so])
 
-
  
