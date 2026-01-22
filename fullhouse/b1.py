@@ -12,6 +12,12 @@
 # 4 kiểu trên đều thuộc hướng đối tượng: 
 # cùng 1 giá trị ->sẽ lưu cùng 1 ô nhớ(cùng id khi cùng 1 ô dữ liệu)
 
+
+'''
+cùng giá trị thì cùng ô nhớ
+khác giá trị thì khác ô nhớ 
+'''
+
 # a = 1
 # b = 1
 # print(id(a))
@@ -33,6 +39,12 @@
 # dict
 # class
 # function
+
+'''
+cùng giá trị có thể dùng ô nhớ trong trường hợp gán hoặc copy
+khi 2 biến cùng ô nhớ từ viện copy hoặc gán thì thay đổi 1 biến, thì biến còn lại cũng bị thay đổi theo 
+biến sau khi thay đổi và biến trước khi thay đổi vẫn có cùng id
+'''
 
 
 
