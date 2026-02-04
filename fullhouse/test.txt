@@ -2,3 +2,51 @@
 2. sinh năm 2005
 3. Hoàng thị minh ngọc
 4. sinh năm 2005
+
+Đề bài:
+
+Thông tin về nhân viên bao gồm:
+
+Mã nhân viên (tự động tăng theo thứ tự nhập, bắt đầu từ NV01)
+Họ và tên
+Lương cơ bản mỗi ngày công
+Số ngày công
+Chức vụ
+Cách tính:
+
+Tiền lương = lương cơ bản × số ngày công
+Thưởng:
+
+≥ 25 ngày công → thưởng 20% lương
+22 ≤ số ngày công < 25 → thưởng 10% lương
+< 22 ngày công → không thưởng
+Phụ cấp chức vụ:
+
+Giám Đốc: 250,000
+Phó Giám Đốc: 200,000
+Trưởng phòng: 180,000
+Nhân viên: 150,000
+Thu nhập = lương + thưởng + phụ cấp
+Input:
+
+Gồm 4 dòng lần lượt là:
+
+Họ tên
+Lương cơ bản
+Số ngày công
+Chức vụ
+Constraints:
+
+0 ≤ số ngày công ≤ 31
+1 ≤ lương cơ bản ≤ 10^7
+Output:
+
+In ra 1 dòng gồm:
+
+mã nhân viên
+tên nhân viên
+lương tháng
+thưởng
+phụ cấp
+thu nhập
+Các thông tin cách nhau một dấu cách.

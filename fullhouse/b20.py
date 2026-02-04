@@ -27,7 +27,7 @@ Setter → gán (thay đổi) giá trị của thuộc tính
 Phạm vi:
 - public: bắt đầu tên không có gạch chân ở dưới
 - priavte: __tên
-- protected: _tên
+# - protected: _tên
 
 '''
 
@@ -289,31 +289,113 @@ Chỉ cần khai báo thuộc tính + kiểu dữ liệu
 # Abstraction class là hình thức tổ chức code nghiêm ngặt có qui tắc, không được làm sai yêu cầu
 
 
-class Sinhvien:
-    ds = []
-    stt = 0
-    def __init__(self,name,my_class,bod,gpa):
-        self.name = self.chuan_hoa_ten(name)
-        self.bod = self.chuan_hoa_ngay(bod)
-        self.my_class = my_class
-        self.gpa = gpa
-        self.msv = self.ma_sinh_vien()
-        Sinhvien.ds.append(self)
-    def chuan_hoa_ngay(self,bod):
-        d,m,y = bod.split('/')
-        return f'{d.zfill(2)}/{m.zfill(2)}/{y}'
-    def chuan_hoa_ten(self,name):
-        return name.title()
-    def ma_sinh_vien(self):
-        Sinhvien.stt +=1
-        return f'SV{str(Sinhvien.stt).zfill(3)}'
-    @staticmethod
-    def tra_ve():
-        a = sorted(Sinhvien.ds, key= lambda x: (-x.gpa,int(x.msv[2:])))
-        for i in a:
-            print(i)
+# class Sinhvien:
+#     ds = []
+#     stt = 0
+#     def __init__(self,name,my_class,bod,gpa):
+#         self.name = self.chuan_hoa_ten(name)
+#         self.bod = self.chuan_hoa_ngay(bod)
+#         self.my_class = my_class
+#         self.gpa = gpa
+#         self.msv = self.ma_sinh_vien()
+#         Sinhvien.ds.append(self)
+#     def chuan_hoa_ngay(self,bod):
+#         d,m,y = bod.split('/')
+#         return f'{d.zfill(2)}/{m.zfill(2)}/{y}'
+#     def chuan_hoa_ten(self,name):
+#         return name.title()
+#     def ma_sinh_vien(self):
+#         Sinhvien.stt +=1
+#         return f'SV{str(Sinhvien.stt).zfill(3)}'
+#     @staticmethod
+#     def tra_ve():
+#         a = sorted(Sinhvien.ds, key= lambda x: (-x.gpa,int(x.msv[2:])))
+#         for i in a:
+#             print(i)
         
-n = int(input())
-for i in range(n):
-    Sinhvien(input(),input(),input(),float(input()))
-Sinhvien.tra_ve()
+# n = int(input())
+# for i in range(n):
+#     Sinhvien(input(),input(),input(),float(input()))
+# Sinhvien.tra_ve()
+
+
+
+
+
+
+
+'''
+CHỮA BÀI TẬP OOP
+'''
+
+# class Nhanvien:
+#     stt = 0
+#     def __init__(self,name, lcb, day, chuc_vu):
+#         self.mnv = self.msnv()
+#         self.name = name
+#         self.lcb = lcb
+#         self.day = day
+#         self.chuc_vu = chuc_vu
+#     def msnv(self):
+#         Nhanvien.stt +=1
+#         return f'NV{str(Nhanvien.stt).zfill(2)}'
+#     def luong(self):
+#         return self.lcb * self.day
+#     def thuong(self):
+#         if self.day >= 25:
+#             return self.luong() * 0.2
+#         elif self.day >= 22:
+#             return self.luong()* 0.1
+#         else:
+#             return self.day
+#     def phucap(self):
+#         if self.chuc_vu == 'Giam Doc':
+#             return 250000
+#         elif self.chuc_vu == 'Pho Giam Doc':
+#             return 200000
+#         elif self.chuc_vu == 'Truong Phong':
+#             return 180000
+#         else:
+#             return 150000
+#     def total(self):
+#         return self.lcb + self.thuong() + self.phucap
+    
+#     def __str__(self):
+#         return f'{self.mnv} {self.name} {self.lcb} {self.thuong()} {self.phucap()} {self.total()}'
+    
+# nv = Nhanvien(input(),int(input()), int(input()), input())
+
+
+        
+
+class KQtuyensinh:
+  def __init__(self,kv,name,toan,ly,hoa):
+    self.kv = kv
+    self.name = name
+    self.toan = toan
+    self.ly = ly
+    self.hoa = hoa
+  def kv1(self):
+    ut = 0
+    m = self.kv[2]
+    if m == '1':
+      ut = 0.5
+    elif m == '2':
+      ut = 1 
+    elif m == '3':
+      ut = 2.5
+    return ut
+  def tongdiem(self):
+    a =self.toan + self.ly + self.hoa + self.kv1()
+    return 'TRUNG TUYEN' if a >= 24 else 'TRUOT'
+  def __str__(self):
+    if (self.toan + self.ly + self.hoa + self.kv1()) % 1 == 0:
+      a = int(self.toan + self.ly + self.hoa + self.kv1()) 
+    else:
+      a = self.toan + self.ly + self.hoa + self.kv1()
+    return f'{self.kv} {self.name} {self.kv[:3]} {a} {self.tongdiem()}'
+    
+ts = KQtuyensinh(input(),input(), float(input()), float(input()), float(input()))
+print(ts)
+
+

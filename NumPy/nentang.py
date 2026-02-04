@@ -106,11 +106,15 @@ bool → int → float → complex → string → object
 
 # arr1 = np.array([[1, 2, 10], [3,13, 4]])
 # arr2 = np.array([[5, 6, 11], [7,12, 8]])
-# arr = np.concatenate((arr1, arr2), axis=0)    # 0 nối theo hàng (dọc) số cột phải bằng nhau
-# print(arr)                                    # 1 nối theo cột (ngang) số hàng phải bằng nhau
+# arr = np.concatenate((arr1, arr2), axis=0)    # 0 nối theo hàng (thêm hàng) số cột phải bằng nhau
+# print(arr)                                    # 1 nối theo cột (thêm cột) số hàng phải bằng nhau
 # arr = np.concatenate((arr1, arr2), axis=1)
 # print(arr)  
 
+#a.append(arr, value, axis = 0)  #thêm vào hàng
+                          #1 thêm vào cột
+
+#a.insert(arr, obj, values,axis = None)    
 
 #tách mảng array_split()
 # arr = np.array([1, 2, 3, 4, 5, 6])
@@ -154,11 +158,11 @@ sao cho thứ tự sắp xếp của mảng vẫn được giữ nguyên.
 # print(newarr)       #[41 43]
 
 
-arr = np.array([41, 42, 43, 44])
-filter_arr = arr > 42
-newarr = arr[filter_arr]
-print(filter_arr)   #[False False  True  True]
-print(newarr)       #[43 44]
+# arr = np.array([41, 42, 43, 44])
+# filter_arr = arr > 42
+# newarr = arr[filter_arr]
+# print(filter_arr)   #[False False  True  True]
+# print(newarr)       #[43 44]
 
 
 
